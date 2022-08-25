@@ -1,0 +1,27 @@
+{
+  "name": "demo",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": "",
+  "license": "",
+  "author": "",
+  "scripts": {
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open",
+    "start": "yarn run build && yarn run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "eslint": "^8.10.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "^2.5.1"
+  },
+  "dependencies": {
+    "lib": "^4.3.3",
+    "mime-types": "^2.1.35",
+    "modernizr": "^3.12.0",
+    "parcel": "^2.7.0",
+    "path-browserify": "^1.0.1"
+  }
+}

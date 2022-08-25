@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>tidc - tweak import data composer</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-screen bg-gradient-to-b from-blue-500 to-cyan-500">
+
+  <div
+    class="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-screen justify-center items-center flex">
+    <div class="relative p-4 w-full max-w-2xl h-auto mx-0 my-auto">
+      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <div class="flex justify-between items-start p-4 rounded-t">
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+            tidc - tweak import data composer
+          </h3>
+        </div>
+        <div class="p-6 space-y-6 border-t dark:border-gray-600">
+          <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+            This is an assistant tool for the Chrome extension <a
+              href="https://chrome.google.com/webstore/detail/tweak-mock-and-modify-htt/feahianecghpnipmhphmfgmpdodhcapi"
+              target="_blank" class="text-blue-600 dark:text-blue-500 hover:underline">tweak</a>. Specifying
+            <strong>"Target Domain"</strong> and <strong>"Select Zip"</strong> will generate JSON that can be imported
+            by tweak based
+            on the
+            directory tree in the Zip file. Click the <strong>"Save JSON"</strong> button to save the JSON.
+          </p>
+        </div>
+        <div class="p-6 space-y-3 border-t dark:border-gray-600">
+          <div>
+            <label for="domain_input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+              Target domain
+            </label>
+            <input type="text" id="domain_input" value="https://dummy-domain.com"
+              class="block p-2 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+          </div>
+          <label class="block text-sm font-medium text-gray-900 dark:text-gray-300" for="file_input">
+            Select Zip
+          </label>
+          <input
+            class="block w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            aria-describedby="file_input_help" id="file_input" type="file" accept=".zip">
+        </div>
+        <div
+          class="flex flex-col flex-nowrap items-stretch p-6 space-y-3 rounded-b border-t border-gray-200 dark:border-gray-600">
+          <label class="flex-initial self-auto text-sm font-medium text-gray-900 dark:text-gray-300">
+            import.json
+          </label>
+          <textarea id="output" rows="9" disabled
+            placeholder="example.zip&#10;├ mock.json&#10;└ directory&#10;  └ mock2.json}&#10;&#10;↓ The following mocks will be composed.&#10;&#10;https://dummy-domain.com/mock1.json&#10;https://dummy-domain.com/directory/mock2.json"
+            class="flex-initial self-auto font-mono p-4 text-gray-700 bg-gray-50 rounded-lg border border-gray-300 text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+          <button type="button" id="save_json" disabled
+            class="flex-initial self-end text-right text-gray-400 bg-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:text-gray-400 dark:bg-gray-600 enabled:text-white enabled:bg-blue-700 enabled:dark:bg-blue-600 enabled:hover:bg-blue-800 enabled:focus:ring-4 enabled:focus:outline-none enabled:focus:ring-blue-300 enabled:dark:hover:bg-blue-700 enabled:dark:focus:ring-blue-800">
+            Save JSON
+          </button>
+        </div>
+        <div
+          class="flex flex-col flex-nowrap items-stretch p-6 space-y-3 rounded-b border-t border-gray-200 dark:border-gray-600">
+          <!--
+          <details>
+            <summary class="text-sm font-medium text-gray-900 dark:text-gray-300">
+              How
+            </summary>
+            <div class="pt-3">
+              <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-400">
+                This is an assistant tool for the Chrome extension
+              </p>
+            </div>
+          </details>
+          -->
+          <details>
+            <summary class="text-sm font-medium text-gray-900 dark:text-gray-300">
+              Components
+            </summary>
+            <div class="pt-3">
+              <ul class="list-disc list-inside text-gray-500 dark:text-gray-400">
+                <li><a href="https://html5boilerplate.com/" target="_blank"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">
+                    HTML5 Boilerplate
+                  </a></li>
+                <li><a href="https://github.com/imaya/zlib.js/blob/develop/bin/unzip.min.js" target="_blank"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">
+                    unzip.min.js
+                  </a></li>
+                <li><a href="https://tailwindcss.com/" target="_blank"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">
+                    Tailwind CSS
+                  </a></li>
+                <li><a href="https://flowbite.com/" target="_blank"
+                    class="text-blue-600 dark:text-blue-500 hover:underline">
+                    Flowbite
+                  </a></li>
+              </ul>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
