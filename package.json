@@ -6,8 +6,8 @@
   "license": "",
   "author": "",
   "scripts": {
-    "build": "parcel build index.html --out-dir docs",
-    "dev": "parcel index.html --out-dir docs",
+    "build": "parcel build index.html --out-dir docs --public-url https://yakinik.github.io/tidc/",
+    "dev": "parcel index.html",
     "start": "yarn run build && yarn run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
